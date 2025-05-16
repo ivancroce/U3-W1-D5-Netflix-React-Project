@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #141414;
+}
+
+.form-control::placeholder {
+  color: #8c8c8c;
+}
+
+nav .dropdown-toggle::after {
+  content: none;
+}
+
+.gradient-profile-navbar {
+  background: linear-gradient(to bottom, #000000, rgba(0, 0, 0, 0));
+}
+
+.main-container {
+  padding-top: 80px;
+}
