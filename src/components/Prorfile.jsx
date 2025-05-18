@@ -3,6 +3,7 @@ import { Navbar, Container, Row, Col, Form, Button, Dropdown } from "react-boots
 import netflixLogo from "../assets/imgs/netflix_logo.png";
 import { PencilFill } from "react-bootstrap-icons";
 
+// languages for dropdown to map
 const languages = ["English", "Italian", "Spanish", "Portuguese", "French", "Deutsch"];
 
 class Profile extends Component {
@@ -34,9 +35,9 @@ class Profile extends Component {
                   </h1>
                 </Col>
               </Row>
-              {/* Sezione profilo */}
+              {/* Profile Section */}
               <Row className="mb-4">
-                {/* Immagine */}
+                {/* Profile img */}
                 <Col xs={12} sm={4} md={3} className="mb-3 mb-sm-0">
                   <div className="position-relative">
                     <img
@@ -62,6 +63,7 @@ class Profile extends Component {
                       <Dropdown.Toggle variant="dark" className="rounded-0 px-4 py-1 fs-6 text-white bg-black border-light" style={{ letterSpacing: "1px" }}>
                         {this.state.selectedLanguage}
                       </Dropdown.Toggle>
+                      {/* array.map for dropdown */}
                       <Dropdown.Menu variant="dark">
                         {languages.map((lang) => (
                           <Dropdown.Item key={lang} onClick={() => this.setState({ selectedLanguage: lang })}>
