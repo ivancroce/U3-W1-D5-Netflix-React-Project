@@ -5,12 +5,12 @@ import avatarLogo from "../assets/imgs/avatar.png";
 import kidsIcon from "../assets/imgs/kids_icon.png";
 import { Component } from "react";
 import PencislIcon from "./icons/PencilIcon";
-import { PersonFillCheck } from "react-bootstrap-icons";
 import TransferProfileIcon from "./icons/TransferProfileIcon";
 import AccountIcon from "./icons/AccountIcon";
 import HelpCenterIcon from "./icons/HelpCenterIcon";
 
 class NavbarNetflix extends Component {
+  // to continue searchbar
   state = {
     searchQuery: ""
   };
