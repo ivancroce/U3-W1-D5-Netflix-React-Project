@@ -46,7 +46,7 @@ class Gallery extends Component {
 
         <Row className="g-2">
           {this.state.movies.map((movie) => (
-            <Col xs={6} sm={6} md={4} lg key={movie.imdbID} className="mb-4">
+            <Col xs={6} sm={6} md={4} lg={3} xxl key={movie.imdbID} className="mb-4">
               <Card className="shadow border-0 rounded-0">
                 <Card.Img src={movie.Poster} alt={movie.Title} style={{ height: "400px", objectFit: "cover" }} />
               </Card>

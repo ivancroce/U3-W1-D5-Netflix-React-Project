@@ -20,3 +20,9 @@ nav .dropdown-toggle::after {
 .main-container {
   padding-top: 80px;
 }
+
+/* Profile Page */
+
+.navbar-profile {
+  background: linear-gradient(to bottom, #000000, rgba(0, 0, 0, 0));
+}
