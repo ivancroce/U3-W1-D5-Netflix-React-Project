@@ -27,13 +27,13 @@ class NavbarNetflix extends Component {
 
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto mb-2 mb-lg-0">
-              <Nav.Link active href="#">
+              <Nav.Link href="#" active={this.props.page === "home"}>
                 Home
               </Nav.Link>
-              <Nav.Link href="#">Tv Shows</Nav.Link>
-              <Nav.Link href="#">Movies</Nav.Link>
-              <Nav.Link href="#">Recently Added</Nav.Link>
-              <Nav.Link href="#">My List</Nav.Link>
+              <Nav.Link>Tv Shows</Nav.Link>
+              <Nav.Link>Movies</Nav.Link>
+              <Nav.Link>Recently Added</Nav.Link>
+              <Nav.Link>My List</Nav.Link>
             </Nav>
 
             {/* Navbar End */}
@@ -95,7 +95,7 @@ class NavbarNetflix extends Component {
                   <TransferProfileIcon />
                   Transfer Profile
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#">
+                <NavDropdown.Item onClick={() => this.props.onPageSelect("account")}>
                   <AccountIcon /> Account
                 </NavDropdown.Item>
                 <NavDropdown.Item href="#">

@@ -4,6 +4,7 @@ import Gallery from "./components/Gallery.jsx";
 import Footer from "./components/Footer.jsx";
 import { Component } from "react";
 import Profile from "./components/Prorfile.jsx";
+import Account from "./components/Account.jsx";
 
 class App extends Component {
   state = {
@@ -15,11 +16,13 @@ class App extends Component {
 
     if (selectedPage === "profile") {
       return <Profile />;
+    } else if (selectedPage === "account") {
+      return <Account />;
     }
 
     return (
       <>
-        <NavbarNetflix onPageSelect={(page) => this.setState({ selectedPage: page })} />
+        <NavbarNetflix onPageSelect={(page) => this.setState({ selectedPage: page })} page="home" />
 
         <div className="main-container">
           <Gallery title="Batman Movies" query="batman" />
