@@ -1,4 +1,4 @@
-import { Navbar, Nav, Container, NavDropdown, Form, Button, InputGroup } from "react-bootstrap";
+import { Navbar, Nav, Container, NavDropdown, Form, Button, InputGroup, Image } from "react-bootstrap";
 import { BsSearch, BsBellFill, BsCaretDownFill } from "react-icons/bs";
 import netflixLogo from "../assets/imgs/netflix_logo.png";
 import avatarLogo from "../assets/imgs/avatar.png";
@@ -17,17 +17,17 @@ class NavbarNetflix extends Component {
 
   render() {
     return (
-      <Navbar expand="lg" variant="dark" fixed="top" style={{ backgroundColor: "#141414" }}>
+      <Navbar expand="lg" variant="dark" fixed={this.props.page === "home" ? "top" : ""} style={{ backgroundColor: "#141414" }}>
         <Container fluid className="px-lg-5">
-          <Navbar.Brand href="#">
-            <img src={netflixLogo} alt="Netflix Logo" width="100" />
+          <Navbar.Brand href="/">
+            <Image src={netflixLogo} alt="Netflix Logo" width="100" />
           </Navbar.Brand>
 
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto mb-2 mb-lg-0">
-              <Nav.Link href="#" active={this.props.page === "home"}>
+              <Nav.Link href="/" active={this.props.page === "home"}>
                 Home
               </Nav.Link>
               <Nav.Link>Tv Shows</Nav.Link>
@@ -76,7 +76,7 @@ class NavbarNetflix extends Component {
                 id="basic-navbar-nav"
                 title={
                   <span>
-                    <img src={avatarLogo} alt="Profile" width="32" height="32" className="rounded" />
+                    <Image src={avatarLogo} alt="Profile" width="32" height="32" className="rounded" />
                     <BsCaretDownFill className="text-white small ms-1" />
                   </span>
                 }
@@ -84,7 +84,7 @@ class NavbarNetflix extends Component {
                 align="end"
               >
                 <NavDropdown.Item href="#">
-                  <img src={kidsIcon} width="24" height="24" className="rounded me-2" alt="Kids Icon" />
+                  <Image src={kidsIcon} width="24" height="24" className="rounded me-2" alt="Kids Icon" />
                   Kids
                 </NavDropdown.Item>
                 <NavDropdown.Item onClick={() => this.props.onPageSelect("profile")}>

@@ -2,7 +2,14 @@
 
 body {
   font-family: "Roboto", sans-serif;
+}
+
+.body-home {
   background-color: #141414;
+}
+
+.body-account {
+  background-color: #f3f3f3;
 }
 
 .form-control::placeholder {
@@ -25,4 +32,10 @@ nav .dropdown-toggle::after {
 
 .navbar-profile {
   background: linear-gradient(to bottom, #000000, rgba(0, 0, 0, 0));
+}
+
+.profile-btn:hover,
+.profile-btn:active,
+.profile-btn:first-child:active {
+  color: white !important;
 }

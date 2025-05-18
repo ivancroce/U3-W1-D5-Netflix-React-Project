@@ -14,9 +14,17 @@ class App extends Component {
   render() {
     const { selectedPage } = this.state;
 
+    if (selectedPage === "home") {
+      document.body.classList.add("body-home");
+    } else if (selectedPage === "account") {
+      document.body.classList.add("body-account");
+    }
+
     if (selectedPage === "profile") {
       return <Profile />;
-    } else if (selectedPage === "account") {
+    }
+
+    if (selectedPage === "account") {
       return <Account />;
     }
 

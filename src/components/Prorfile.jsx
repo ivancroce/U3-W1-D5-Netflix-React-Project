@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Navbar, Container, Row, Col, Form, Button, Dropdown } from "react-bootstrap";
+import { Navbar, Container, Row, Col, Form, Button, Dropdown, Image } from "react-bootstrap";
 import netflixLogo from "../assets/imgs/netflix_logo.png";
 import { PencilFill } from "react-bootstrap-icons";
 
@@ -17,8 +17,8 @@ class Profile extends Component {
         {/* Navbar */}
         <Navbar expand="lg" variant="dark" className="navbar-profile">
           <Container fluid>
-            <Navbar.Brand href="/" style={{ cursor: "pointer" }}>
-              <img src={netflixLogo} alt="Netflix Logo" width="120" />
+            <Navbar.Brand href="/">
+              <Image src={netflixLogo} alt="Netflix Logo" width="120" />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav"></Navbar.Collapse>
@@ -40,7 +40,7 @@ class Profile extends Component {
                 {/* Profile img */}
                 <Col xs={12} sm={4} md={3} className="mb-3 mb-sm-0">
                   <div className="position-relative">
-                    <img
+                    <Image
                       src="https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/16620/production/_91408619_55df76d5-2245-41c1-8031-07a4da3f313f.jpg"
                       alt="Profile"
                       className="img-fluid rounded"
@@ -85,7 +85,7 @@ class Profile extends Component {
                       Show titles of <strong>all maturity ratings</strong> for this profile.
                     </p>
                     <div className="pb-3">
-                      <Button variant="outline-secondary" className="text-secondary rounded-0 px-4 py-1" style={{ letterSpacing: "2px" }}>
+                      <Button variant="outline-secondary" className="profile-btn text-secondary rounded-0 px-4 py-1" style={{ letterSpacing: "2px" }}>
                         EDIT
                       </Button>
                     </div>
@@ -120,12 +120,12 @@ class Profile extends Component {
                     </Button>
                   </Col>
                   <Col xs={12} sm={4} md={3}>
-                    <Button variant="outline-secondary" className="text-uppercase text-secondary rounded-0 w-100" style={{ letterSpacing: "2px" }}>
+                    <Button variant="outline-secondary" className=" profile-btn text-uppercase text-secondary rounded-0 w-100" style={{ letterSpacing: "2px" }}>
                       Cancel
                     </Button>
                   </Col>
                   <Col xs={12} sm={4} md={6}>
-                    <Button variant="outline-secondary" className="text-uppercase text-secondary rounded-0 w-100" style={{ letterSpacing: "2px" }}>
+                    <Button variant="outline-secondary" className=" profile-btn text-uppercase text-secondary rounded-0 w-100" style={{ letterSpacing: "2px" }}>
                       Delete Profile
                     </Button>
                   </Col>
