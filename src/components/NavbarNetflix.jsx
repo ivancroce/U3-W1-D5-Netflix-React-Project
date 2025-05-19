@@ -10,9 +10,27 @@ import AccountIcon from "./icons/AccountIcon";
 import HelpCenterIcon from "./icons/HelpCenterIcon";
 
 class NavbarNetflix extends Component {
-  // to continue searchbar
+  // State elevation, moved searchQuery in App.jsx
   state = {
-    searchQuery: ""
+    query: "" // To store the current value of the search input
+  };
+
+  // Update the query as the user types into the input field
+  handleInputChange = (e) => {
+    this.setState({ query: e.target.value });
+  };
+
+  // Handles the submit when pressing enter in the search bar
+  handleSubmit = (e) => {
+    e.preventDefatult();
+    this.props.onSearch(this.state.query);
+  };
+
+  // Handle the search when clicking the search btn
+  handleSearch = () => {
+    if (this.state.query) {
+      this.props.onSearch(this.state.query);
+    }
   };
 
   render() {
@@ -39,11 +57,24 @@ class NavbarNetflix extends Component {
             {/* Navbar End */}
             <div className="d-flex align-items-center gap-2">
               {/* Search bar */}
-              {/* Extra: I need to make it works */}
               <div className="d-flex align-items-center">
+                {/* Collpsible search input (horizontal) */}
                 <div className="collapse collapse-horizontal" id="searchBar">
                   <InputGroup>
-                    <Form.Control placeholder="Titles, people, genres" className="text-bg-dark border-0" style={{ width: "200px" }} />
+                    <Form.Control
+                      placeholder="Titles, people, genres"
+                      className="text-bg-dark border-0"
+                      style={{ width: "200px" }}
+                      // Update the query state when typing
+                      onChange={(e) => this.setState({ query: e.target.value })}
+                      // When Enter key is pressed, it will starts the Search
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                          e.preventDefault();
+                          this.handleSearch();
+                        }
+                      }}
+                    />
                   </InputGroup>
                 </div>
 
@@ -56,6 +87,7 @@ class NavbarNetflix extends Component {
                   data-bs-target="#searchBar"
                   aria-expanded="false"
                   aria-controls="searchBar"
+                  onClick={this.handleSearch} // Starts the Search by clicking the search btn
                 >
                   <BsSearch />
                 </Button>
@@ -87,6 +119,7 @@ class NavbarNetflix extends Component {
                   <Image src={kidsIcon} width="24" height="24" className="rounded me-2" alt="Kids Icon" />
                   Kids
                 </NavDropdown.Item>
+                {/* onClick to select the Profile Page */}
                 <NavDropdown.Item onClick={() => this.props.onPageSelect("profile")}>
                   <PencislIcon />
                   Manage Profiles
@@ -95,6 +128,7 @@ class NavbarNetflix extends Component {
                   <TransferProfileIcon />
                   Transfer Profile
                 </NavDropdown.Item>
+                {/* onClick to select the Account Page */}
                 <NavDropdown.Item onClick={() => this.props.onPageSelect("account")}>
                   <AccountIcon /> Account
                 </NavDropdown.Item>
